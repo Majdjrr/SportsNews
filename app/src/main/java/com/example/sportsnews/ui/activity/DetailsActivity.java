@@ -40,7 +40,6 @@ public class DetailsActivity extends AppCompatActivity {
             article = null; //Or some error status //
         }
 
-        Log.d("WWWWWWWWWWWWWWWWWWWW",article.getUrlToImage().toString());
 
         if (article.getAuthor()==null || article.getAuthor().isEmpty()){
           articalauther.setText("");

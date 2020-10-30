@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void finish(Data registerMember) {
 
-                Log.d("WWWWWWWWWWWWWWWWWW", String.valueOf(registerMember.getArticles().size()));
+
                 for (int i = 0; i < registerMember.getArticles().size(); i++) {
                     menuModels1.add(registerMember.getArticles().get(i));
                 }

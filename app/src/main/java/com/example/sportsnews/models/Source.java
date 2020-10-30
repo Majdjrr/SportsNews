@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Source implements Serializable, Parcelable
+public class Source implements Serializable
 {
 
     @SerializedName("id")
@@ -17,28 +17,6 @@ public class Source implements Serializable, Parcelable
     @SerializedName("name")
     @Expose
     private String name;
-    public final static Parcelable.Creator<Source> CREATOR = new Creator<Source>() {
-
-
-        @SuppressWarnings({
-                "unchecked"
-        })
-        public Source createFromParcel(Parcel in) {
-            return new Source(in);
-        }
-
-        public Source[] newArray(int size) {
-            return (new Source[size]);
-        }
-
-    }
-            ;
-    private final static long serialVersionUID = 2419646246952459764L;
-
-    protected Source(Parcel in) {
-        this.id = ((Object) in.readValue((Object.class.getClassLoader())));
-        this.name = ((String) in.readValue((String.class.getClassLoader())));
-    }
 
     /**
      * No args constructor for use in serialization

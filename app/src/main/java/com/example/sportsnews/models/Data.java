@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class Data implements Serializable, Parcelable
+public class Data implements Serializable
 {
 
     @SerializedName("status")
@@ -22,29 +22,10 @@ public class Data implements Serializable, Parcelable
     @SerializedName("articles")
     @Expose
     private List<Article> articles = null;
-    public final static Parcelable.Creator<Data> CREATOR = new Creator<Data>() {
 
-
-        @SuppressWarnings({
-                "unchecked"
-        })
-        public Data createFromParcel(Parcel in) {
-            return new Data(in);
-        }
-
-        public Data[] newArray(int size) {
-            return (new Data[size]);
-        }
-
-    }
-            ;
     private final static long serialVersionUID = 8724157522046594331L;
 
-    protected Data(Parcel in) {
-        this.status = ((String) in.readValue((String.class.getClassLoader())));
-        this.totalResults = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        in.readList(this.articles, (com.example.sportsnews.models.Article.class.getClassLoader()));
-    }
+
 
     /**
      * No args constructor for use in serialization
